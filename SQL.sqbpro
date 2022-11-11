@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/dell/Desktop/Project (A)/create.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="845"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,11:mainbestsellers"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="bestsellers" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="300"/><column index="2" value="208"/><column index="3" value="50"/><column index="4" value="57"/><column index="5" value="40"/><column index="6" value="40"/><column index="7" value="70"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="projectA.sql">-- The full TABLE
+SELECT* FROM bestsellers
+
+-- in 2019 evens
+SELECT * 
+FROM bestsellers
+WHERE Year==2019
+
+-- All books Non Fiction in 2019 
+SELECT * 
+FROM bestsellers
+WHERE Year==2019 and Genre='Non Fiction'
+
+
+
+-- Hightest books Rating  Non Fiction in 2019
+SELECT * 
+FROM bestsellers
+WHERE Year==2019 and Genre='Non Fiction' and Rating&gt;=4.5
+
+
+
+-- Highest books Price in 2019 
+SELECT * 
+FROM bestsellers
+WHERE Year==2019 and Price&gt;=15
+
+
+
+
+
+-- in 2019 evens
+SELECT * 
+FROM bestsellers
+WHERE Year==2019
+
+
+
+-- Find Authors: David Goggins And Delia Owens
+SELECT * 
+FROM bestsellers
+WHERE Author in (' David Goggins','Delia Owens')
+
+
+
+-- The books names begining 'R' in 2019
+SELECT * 
+FROM bestsellers
+WHERE Name like 'R%'
+
+
+
+-- Riviews books Greater than 2000 in 2019
+SELECT * 
+FROM bestsellers
+WHERE Year==2019 and Riviews&gt;=2000
+
+
+
+
+-- Maximum VALUES Books price in 2019
+SELECT Max(Price )
+FROM bestsellers
+WHERE Year==2019 
+
+-- Minimum VALUES Books price in 2019
+SELECT min(Price )
+FROM bestsellers
+WHERE Year==2019 
+
+
+
+-- Maximum VALUES Books Riviews in 2019
+SELECT Max(Riviews )
+FROM bestsellers
+WHERE Year==2019 
+
+
+-- Maximum VALUES Books Riviews in 2019
+SELECT Max(Riviews )
+FROM bestsellers
+WHERE Year==2019 
+
+
+
+-- Maximum VALUES Books Rating in 2019
+SELECT Max(Rating )
+FROM bestsellers
+WHERE Year==2019 
+
+
+-- Maximum VALUES Books Rating in 2019
+SELECT Max(Rating )
+FROM bestsellers
+WHERE Year==2019 
+
+
+-- Avarege VALUES Books Price in 2019
+SELECT avg(Price )
+FROM bestsellers
+WHERE Year==2019 
+
+
+
+-- count VALUES Books Price in 2019
+SELECT count(Price )
+FROM bestsellers
+WHERE Year==2019
+
+
+-- Sum VALUES Books Price in 2019
+SELECT sum(Price )
+FROM bestsellers
+WHERE Year==2019 
+
+
+-- Avarege VALUES Books Riviews in 2019
+SELECT avg(Riviews )
+FROM bestsellers
+WHERE Year==2019
+
+
+
+-- count VALUES Books Riviews in 2019
+SELECT count(Riviews )
+FROM bestsellers
+WHERE Year==2019
+
+
+-- Sum VALUES Books Riviews in 2019
+SELECT sum(Riviews )
+FROM bestsellers
+WHERE Year==2019
+
+
+-- Avarege VALUES Books Rating in 2019
+SELECT avg(Rating )
+FROM bestsellers
+WHERE Year==2019 
+
+
+-- Count VALUES Books Rating in 2019
+SELECT count(Rating )
+FROM bestsellers
+WHERE Year==2019 
+
+-- sum VALUES Books Rating in 2019
+SELECT sum(Rating )
+FROM bestsellers
+WHERE Year==2019 
+
+
+-- How many books Non fiction and fiction in 2019
+SELECT Genre , count(Name )
+FROM bestsellers
+WHERE Year==2019 
+GROUP by Genre
+
+--how many books for their prices in 2019
+SELECT Price , count(Name )
+FROM bestsellers
+WHERE Year==2019 
+GROUP by Price
+
+--Limit 10 Rows books in 2019
+SELECT*
+FROM bestsellers
+WHERE Year==2019 
+LIMIT 10
+
+
+
+
+
+
+</sql><current_tab id="0"/></tab_sql></sqlb_project>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/dell/Desktop/Project (A)/create.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="845"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,11:mainbestsellers"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="bestsellers" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="300"/><column index="2" value="208"/><column index="3" value="50"/><column index="4" value="57"/><column index="5" value="40"/><column index="6" value="40"/><column index="7" value="70"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">/*(1)  The Table */
+SELECT* FROM bestsellers
+
+/*(2)2019 evens*/
+SELECT* FROM bestsellers
+WHERE Year=2019
+
+/*(3)All books Non Fiction in 2019*/
+SELECT* FROM bestsellers
+WHERE Year=2019 AND Genre='Non Fiction'
+
+/*(4)Hight Rating books Non Fiction in 2019*/
+SELECT* FROM bestsellers
+WHERE Year=2019 AND Genre='Non Fiction' AND Rating&gt;=4.5
+
+/*(5)Hight Price books  in 2019*/
+SELECT* FROM bestsellers
+WHERE Year=2019 AND Price&gt;=15
+
+/*(6)Find Author: David Goggins And Delia Owens */
+SELECT* FROM bestsellers
+WHERE Author in ('David Goggins','Delia Owens')
+
+
+/*(7)the Books Names Begining 'R' in 2019*/
+SELECT* FROM bestsellers
+where Name like 'R%';
+
+
+/*(8)Riviews books Greater than 2000  in 2019*/
+SELECT Riviews,Year FROM bestsellers
+where Riviews&gt;=2000 and Year=2019
+
+
+
+/*(9)Maximum Values Price books  in 2019*/
+SELECT max(Price)
+FROM bestsellers
+where Year=2019
+
+
+
+
+/*(10)Minimum Values Price books  in 2019*/
+SELECT min(Price)
+FROM bestsellers
+where Year=2019
+
+
+
+
+/*(11)Maximum Values Riviews books  in 2019*/
+SELECT max(Riviews)
+FROM bestsellers
+where Year=2019
+
+
+/*(12)Minimum Values Riviews books  in 2019*/
+SELECT min(Riviews)
+FROM bestsellers
+where Year=2019
+
+
+
+/*(13)Maximum Values Rating books  in 2019*/
+SELECT max(Rating)
+FROM bestsellers
+where Year=2019
+
+
+/*(14)Minimum Values Rating books  in 2019*/
+SELECT min(Rating)
+FROM bestsellers
+where Year=2019
+
+
+
+/*(15)count Values Price books  in 2019*/
+SELECT count(Price)
+FROM bestsellers
+where Year=2019
+
+
+
+/*(16)Avarege Values Price books  in 2019*/
+SELECT avg(Price)
+FROM bestsellers
+where Year=2019
+
+
+/*(17)sum Values Price books  in 2019*/
+SELECT sum(Rating)
+FROM bestsellers
+where Year=2019
+
+
+
+
+/*(18)count Values Rating books  in 2019*/
+SELECT count(Rating)
+FROM bestsellers
+where Year=2019
+
+
+
+/*(19)Avarege Values Rating books  in 2019*/
+SELECT avg(Rating)
+FROM bestsellers
+where Year=2019
+
+
+
+/*(20)sum Values Rating books  in 2019*/
+SELECT sum(Rating)
+FROM bestsellers
+where Year=2019
+
+
+
+/*(21)Avarege Values Reviews books  in 2019*/
+SELECT avg(Reviews)
+FROM bestsellers
+where Year=2019
+
+
+
+/*(22)sum Values Riviews books  in 2019*/
+SELECT sum(Riviews)
+FROM bestsellers
+where Year=2019
+
+
+/*(23)count Values Riviews books  in 2019*/
+SELECT count(Riviews)
+FROM bestsellers
+where Year=2019
+
+
+/*(24)How many book non fiction and fiction in 2019*/
+SELECT Genre , count(Name)
+FROM bestsellers
+WHERE Year =2019
+GROUP By Genre
+
+
+
+/*(24)How many book For their prices in 2019*/
+SELECT Price , count(Name)
+FROM bestsellers
+WHERE Year =2019
+GROUP By Price
+
+
+
+/*(25)LIMIT 10 rows books  in 2019*/
+SELECT*
+FROM bestsellers
+WHERE Year==2019
+LIMIT 10
+
+
+
+/*(26)When you want insert in rows*/
+INSERT bestsellers (column1,...)
+VALUE (new value,....)
+ 
+
+
+
+/*(27)when you want UPDATE in the COLUMN*/
+UPDATE bestsellers
+SET COLUMN1=value1,COLUMN2=value2
+where condition
+/*(28)when you want to DELETE data in table*/
+/*Delete records*/
+DELETE from bestsellers
+where condition
+/*Delete all records*/
+DELETE from bestsellers
+/*(28)if ou want to ALTER table */
+/* Add the column*/
+ALTER TABLE bestsellers
+ADD column_name datatype
+/* DELETE the column*/
+ALTER TABLE bestsellers
+DROP COLUMN COLUMNName
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
